@@ -28,7 +28,7 @@ This exercise evaluates the following key skills:
 ### The Task
 
 #### 1. Retrieve Route Data
-- **Endpoint**: `/api/navigation/routes`
+- **URL**: `https://hackdiversity.xyz/api/navigation/routes`
 - **Method**: `GET`
 - **Authorization**: Include the `session_id` as a Bearer token in the Authorization header.
 
@@ -40,16 +40,16 @@ This exercise evaluates the following key skills:
   - Insertion Sort
 
 #### 3. Test and Validate
-- Retrieve sample data from `/api/test/mockRoutes` to test your algorithm.
-- Submit test data to `/api/test/submit-sorted-routes` to validate your logic (up to 3 attempts available, which do not impact your final submission count).
+- Retrieve sample data from `https://hackdiversity.xyz/api/test/mockRoutes` to test your algorithm.
+- Submit test data to `https://hackdiversity.xyz/api/test/submit-sorted-routes` to validate your logic (up to 3 attempts available, which do not impact your final submission count).
 
 #### 4. Submit Final Routes
-- **Final Submission Endpoint**: `/api/navigation/sorted_routes`
+- **Final Submission URL**: `https://hackdiversity.xyz/api/navigation/sorted_routes`
 - **Attempts**: Up to 10 attempts are allowed, each of which is logged for review.
 
 #### 5. Completion Status
 - **Check Progress**: 
-  - **Endpoint**: `/api/navigation/status`
+  - **URL**: `https://hackdiversity.xyz/api/navigation/status`
   - **Method**: `GET`
   - This will display your progress, remaining attempts, and feedback on prior submissions.
 
