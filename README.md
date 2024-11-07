@@ -77,8 +77,8 @@ If the session is created successfully, the response will include a unique `sess
 
     ```json
     {
-        "firstName": "John",
-        "lastName": "Doe"
+        "firstName": "Jean-Jacques",
+        "lastName": "Dessalines"
     }
     ```
 
