@@ -14,6 +14,18 @@ This exercise evaluates the following key skills:
 
 ---
 
+### Language and Requirements
+
+- **Preferred Language**: You may complete this challenge in any programming language you are comfortable with, as long as it allows you to:
+  - Implement linear search and basic sorting algorithms.
+  - Interact with RESTful APIs using `GET` and `POST` requests.
+  - Use version control with Git and push code to GitHub.
+
+- **Requirements**: Ensure that your solution meets the following requirements:
+  - Filters accessible routes using linear search.
+  - Sorts routes by distance in ascending order using a basic sorting algorithm (bubble sort, selection sort, or insertion sort).
+  - Submits a sorted list of routes to the API as specified.
+
 ### Preparation and Setup
 
 1. **Fork the Repository**
