@@ -20,11 +20,11 @@ public class RoutesServiceTest {
 
     @Test
     public void testFilterAndSortRoutes() {
-        Route route1 = new Route("1", "Entrance", "Exhibit A", true, 150);
-        Route route2 = new Route("2", "Entrance", "Restroom", true, 50);
-        Route route3 = new Route("3", "Exhibit A", "Cafeteria", false, 200);
-        Route route4 = new Route("4", "Restroom", "Gift Shop", true, 70);
-        Route route5 = new Route("5", "Cafeteria", "Exhibit B", true, 300);
+        Route route1 = new Route("1", "Entrance", "Exhibit A", true, 150.0);
+        Route route2 = new Route("2", "Entrance", "Restroom", true, 50.0);
+        Route route3 = new Route("3", "Exhibit A", "Cafeteria", false, 200.0);
+        Route route4 = new Route("4", "Restroom", "Gift Shop", true, 70.0);
+        Route route5 = new Route("5", "Cafeteria", "Exhibit B", true, 300.0);
 
         List<Route> routes = List.of(route1, route2, route3, route4, route5);
 
@@ -39,8 +39,8 @@ public class RoutesServiceTest {
 
     @Test
     public void testFilterAndSortRoutes_noAccessibleRoutes() {
-        Route route1 = new Route("1", "Exhibit A", "Cafeteria", false, 200);
-        Route route2 = new Route("2", "Exhibit B", "Restroom", false, 150);
+        Route route1 = new Route("1", "Exhibit A", "Cafeteria", false, 200.0);
+        Route route2 = new Route("2", "Exhibit B", "Restroom", false, 150.0);
 
         List<Route> routes = List.of(route1, route2);
         List<Route> sortedRoutes = routesService.filterAndSortRoutes(routes);

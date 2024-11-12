@@ -6,9 +6,12 @@ public class Route {
     private String from;
     private String to;
     private boolean accessible;
-    private int distance;
+    private double distance;
 
-    public Route(String id, String from, String to, boolean accessible, int distance) {
+    public Route() {
+    }
+
+    public Route(String id, String from, String to, boolean accessible, double distance) {
         this.id = id;
         this.from = from;
         this.to = to;
@@ -16,7 +19,6 @@ public class Route {
         this.distance = distance;
     }
 
-    // Getters and Setters
     public String getId() {
         return id;
     }
@@ -53,7 +55,7 @@ public class Route {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 
