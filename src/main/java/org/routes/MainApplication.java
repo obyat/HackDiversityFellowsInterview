@@ -28,6 +28,7 @@ public class MainApplication implements CommandLineRunner {
     public void run(String... args) {
         String sessionId = "Bearer d86afe55-bd4a-44a9-9ba5-42d470136580";
         fetchAndProcessRoutes(sessionId);
+        submitRoutes(sessionId);
     }
 
     private void fetchAndProcessRoutes(String sessionId) {
@@ -43,6 +44,35 @@ public class MainApplication implements CommandLineRunner {
                     } else {
                         System.out.println("No routes retrieved or routes are empty.");
                     }
+                })
+                .subscribe();
+    }
+
+    private void submitRoutes(String sessionId) {
+        apiController.getMockRoutes(sessionId)
+                .doOnTerminate(() -> System.out.println("GET request for mock routes completed"))
+                .doOnSuccess(routes -> {
+                    if (routes != null && !routes.isEmpty()) {
+                        System.out.println("Retrieved Mock Routes: " + routes);
+
+                        List<Route> sortedRoutes = routesService.filterAndSortRoutes(routes);
+                        System.out.println("Sorted Routes: " + sortedRoutes);
+
+                        apiController.submitSortedRoutes(sessionId, sortedRoutes)
+                                .doOnTerminate(() -> System.out.println("POST request for submitting sorted routes completed"))
+                                .doOnSuccess(response -> {
+                                    System.out.println("Validation Response: " + response);
+                                })
+                                .doOnError(error -> {
+                                    System.err.println("Error during submission: " + error.getMessage());
+                                })
+                                .subscribe();
+                    } else {
+                        System.out.println("No mock routes retrieved or routes are empty.");
+                    }
+                })
+                .doOnError(error -> {
+                    System.err.println("Error during GET request for mock routes: " + error.getMessage());
                 })
                 .subscribe();
     }
