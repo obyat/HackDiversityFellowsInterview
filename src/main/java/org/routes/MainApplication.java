@@ -36,6 +36,10 @@ public class MainApplication implements CommandLineRunner {
                 .doOnSuccess(routes -> {
                     if (routes != null && !routes.isEmpty()) {
                         System.out.println("Retrieved Routes: " + routes);
+
+                        List<Route> sortedRoutes = routesService.filterAndSortRoutes(routes);
+                        System.out.println("Sorted Routes: " + sortedRoutes);
+
                     } else {
                         System.out.println("No routes retrieved or routes are empty.");
                     }
